@@ -1,0 +1,19 @@
+{
+  "name": "sg-project-1",
+  "version": "1.0.0",
+  "description": "Sparta Global Project 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yafiimo/sg-project-1.git"
+  },
+  "author": "myafii@spartaglobal.co",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yafiimo/sg-project-1/issues"
+  },
+  "homepage": "https://github.com/yafiimo/sg-project-1#readme"
+}
