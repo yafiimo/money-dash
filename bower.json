@@ -1,0 +1,17 @@
+{
+  "name": "sg-project-1",
+  "description": "Sparta Global Project 1",
+  "main": "index.js",
+  "authors": [
+    "myafii@spartaglobal.co"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/yafiimo/sg-project-1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

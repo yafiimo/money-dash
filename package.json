@@ -4,6 +4,8 @@
   "description": "Sparta Global Project 1",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/yafiimo/sg-project-1/issues"
   },
-  "homepage": "https://github.com/yafiimo/sg-project-1#readme"
+  "homepage": "https://github.com/yafiimo/sg-project-1#readme",
+  "engines": {
+    "node": "6.8.0",
+    "npm": ">= 3"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "node-static": "^0.7.9"
+  }
 }
