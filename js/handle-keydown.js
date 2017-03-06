@@ -1,6 +1,6 @@
 // Directional Control
-function handleKeyDown(event, players) {
-  var player1 = players[0];
+function handleKeyDown(event, player) {
+  var player1 = player;
 
   switch(event.keyCode){
     case 37:
