@@ -15,6 +15,7 @@ Sprite.prototype.draw = function () {
 };
 
 Sprite.prototype.move = function () {
-  this.X += this.vx;
-  this.Y += this.vy;
+  this.X += this.velocity[0];
+  this.Y += this.velocity[1];
+  if(this.velocity[1] < this.gravity) this.velocity[1] += this.weight;
 };

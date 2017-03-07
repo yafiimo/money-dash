@@ -7,9 +7,7 @@ function gameLoop(canvas, context, stages, player, money) {
   var s = stages;
 
 // Motion ------------------------------------------------------------------------------------
-  p1.X += p1.velocity[0];
-  p1.Y += p1.velocity[1];
-  if(p1.velocity[1] < p1.gravity) p1.velocity[1] += p1.weight;
+  p1.move();
 
 // Canvas Boundaries -------------------------------------------------------------------------
   if(p1.X + p1.width >= canvas.width) p1.velocity[0] = -1;
