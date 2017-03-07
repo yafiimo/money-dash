@@ -3,7 +3,7 @@ function gameLoop(canvas, context, stages, player, money) {
   var p1 = player;
   var target = money;
   var targetPosition = [[200, 30], [580, 600], [5, 10], [1000, 650], [30, 500], [1000, 30]];
-
+  var score = 0;
   var s = stages;
 
 // Motion ------------------------------------------------------------------------------------
@@ -65,6 +65,8 @@ function gameLoop(canvas, context, stages, player, money) {
     if(p1.X + p1.width >= target.X && p1.X <= target.X + target.width && p1.Y <= target.Y + target.height && p1.Y >= target.Y){
       target.X = targetPosition[j][0];
       target.Y = targetPosition[j][1];
+      score += 1;
+      document.getElementById('score').children[0].innerHTML = score;
       // level++
     }
   }
@@ -90,5 +92,5 @@ function gameLoop(canvas, context, stages, player, money) {
   // Loop Time
   setTimeout(function() {
     gameLoop(canvas, context, stages, player, money);
-  }, 5);
+  }, 7);
 }
