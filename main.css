@@ -1,4 +1,16 @@
+
+
 #canvas-holder {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+#scoreboard h1 {
+  color: black;
+
+}
+
+#score h1 {
+  color: red;
+  margin-left: -50px;
 }
