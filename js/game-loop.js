@@ -1,16 +1,17 @@
 // GAME LOOP --------------------------------------------------------------------------------------------------------
 var score = 0;
+var level = 0;
 
-function gameLoop(canvas, context, stages, player, money) {
+function gameLoop(canvas, context, stages, player, money, targetPosition) {
   var p1 = player;
   var target = money;
-  var targetPosition = [[1000, 30], [580, 600], [5, 10], [1000, 650], [30, 450], [1000, 30]];
+  var targetXY = targetPosition;
   var s = stages;
 
 // Motion ------------------------------------------------------------------------------------
   p1.move();
-  target.X = targetPosition[score][0];
-  target.Y = targetPosition[score][1];
+  target.X = targetXY[score][0];
+  target.Y = targetXY[score][1];
 // Canvas Boundaries -------------------------------------------------------------------------
   if(p1.X + p1.width >= canvas.width) p1.velocity[0] = -1;
   if(p1.X <= 0) p1.velocity[0] = 1;
@@ -60,15 +61,16 @@ function gameLoop(canvas, context, stages, player, money) {
   }
 
 // Target Respawn ------------------------------------------------------------------------------------------------
-  for(var j = 0; j < 1; j++){
-    if(p1.X + p1.width >= target.X && p1.X <= target.X + target.width && p1.Y <= target.Y + target.height && p1.Y >= target.Y){
-      if(score === 5) {
-        score = 0;
-      } else {
-        score++;
-        document.getElementById('score').children[0].innerHTML = score;
-      }
+  // for(var j = 0; j < 1; j++){
+  if(p1.X + p1.width >= target.X && p1.X <= target.X + target.width && p1.Y <= target.Y + target.height && p1.Y >= target.Y){
+    if(score === 5) {
+      score = 0;
+      level++;
+    } else {
+      score++;
+      document.getElementById('score').children[0].innerHTML = score;
     }
+    // }
   }
 
 // Rendering ------------------------------------------------------------------------------------------------
@@ -91,6 +93,6 @@ function gameLoop(canvas, context, stages, player, money) {
 
   // Loop Time
   setTimeout(function() {
-    gameLoop(canvas, context, stages, player, money);
+    gameLoop(canvas, context, stages, player, money, targetPosition);
   }, 7);
 }
