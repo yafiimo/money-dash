@@ -18,4 +18,5 @@ Sprite.prototype.move = function () {
   this.X += this.velocity[0];
   this.Y += this.velocity[1];
   if(this.velocity[1] < this.gravity) this.velocity[1] += this.weight;
+
 };
