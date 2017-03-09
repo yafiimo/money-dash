@@ -11,6 +11,7 @@
   <script src="js/sprite.js" charset="utf-8"></script>
   <script src="js/handle-keydown.js" charset="utf-8"></script>
   <script src="js/enemies.js" charset="utf-8"></script>
+  <script src="js/collision.js" charset="utf-8"></script>
   <script src="js/game-loop.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
   <link rel="stylesheet" href="main.css">
@@ -21,14 +22,13 @@
 <div id="startScreen">
   <h1>MOney-Dash</h1>
   <button id="startButton" class="btn btn-info btn-block">Start</button>
+  <button id="Instructions" class="btn btn-danger btn-block">Instructions</button>
 </div>
 
   <div id="canvas-holder">
     <canvas id="game-screen" style="display: none"></canvas>
   </div>
 
-  <div id="scoreboard" class="col-md-offset-5 col-md-2 text-center"><h1>Score: </h1></div>
-  <div id="score" class="col-md-2"><h1>0</h1></div>
 
 </body>
 

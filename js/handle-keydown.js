@@ -9,7 +9,7 @@ function handleKeyDown(event, player) {
       }
       break;
     case 39:
-      if(player1.velocity[0] < 3 && player1.X + player1.width < 800) {
+      if(player1.velocity[0] < 3 && player1.X + player1.width < 1200) {
         player1.velocity[0] += 1;
       }
       break;
