@@ -38,14 +38,12 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     if(enemies[1].X <= s[2][0]) enemies[1].velocity[0] = 1;
   }
   if(level === 1){
-    enemies[1].velocity[0] = 1;
-    enemies[1].X = 150;
-    enemies[1].Y = 240;
+    enemies[1].Y = 235;
     if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
     if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
     // enemy2 boundaries
-    if(enemies[1].X + enemies[1].width >= 650) enemies[1].velocity[0] = -1;
-    if(enemies[1].X <= 150) enemies[1].velocity[0] = 1;
+    if(enemies[1].X + enemies[1].width === s[3][0]+ s[3][2]) enemies[1].velocity[0] = -1;
+    if(enemies[1].X === s[3][0]) enemies[1].velocity[0] = 1;
   }
 
 // Rendering ------------------------------------------------------------------------------------------------
@@ -89,22 +87,28 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.font = '100px Impact';
       context.fillStyle = '#FF0000';
-      context.fillText('YOU WIN!', 380, 350);
+      context.fillText('YOU WIN!', 400, 350);
+      setTimeout(function(){
+        document.location.reload();
+      }, 4000);
     }
   }
   for(var n = 0;  n < 2; n++){
     if(player.X + player.width > enemies[n].X && player.X < enemies[n].X + enemies[n].width
       && player.Y + player.height > enemies[n].Y && player.Y < enemies[n].Y + enemies[n].height) {
       if(lives === 1){
-        lives += 5;
+
         level = 3;
         score = 18;
         context.font = '100px Impact';
         context.fillStyle = '#FF0000';
         context.fillText('GAME OVER!', 380, 350);
+        setTimeout(function(){
+          document.location.reload();
+        }, 4000);
       }
-      player.X = 10;
-      player.Y = 660;
+      player.X = 60;
+      player.Y = 485;
       player.velocity[0] = 0;
       player.velocity[1] = 0;
       lives--;

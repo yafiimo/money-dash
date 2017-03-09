@@ -2,16 +2,39 @@ div {
   text-align: center;
 }
 
+p {
+  font-family: Gill Sans;
+}
+
 #canvas-holder {
   margin-top: 30px;
 }
 
-#scoreboard h1 {
-  color: black;
-
+#startButton {
+  background-color: #0c0;
+  font-size: 30px;
+  color: white;
+  border-bottom: 5px #080 solid;
+  border-right: 5px #080 solid;
+  border radius: 50px;
+  margin-top: 300px;
 }
 
-#score h1 {
-  color: red;
-  margin-left: -50px;
+#instructions {
+  border-top: 15px red solid;
+  border-bottom: 15px red solid;
+}
+
+#instructionsButton {
+  background-color: #c00;
+  font-size: 30px;
+  color: white;
+  border-bottom: 5px #800 solid;
+  border-right: 5px #800 solid;
+  border radius: 50px;
+  margin-top: 300px;
+}
+
+#startScreen {
+  background-image: url('images/home.png');
 }
