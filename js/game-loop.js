@@ -29,11 +29,10 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
   }
 
 
-  // enemy1 boundaries
+  // Enemy1 Boundaries
   if(level === 0 || level === 2){
     if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
     if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
-    // enemy2 boundaries
     if(enemies[1].X + enemies[1].width >= s[2][0]+ s[2][2]) enemies[1].velocity[0] = -1;
     if(enemies[1].X <= s[2][0]) enemies[1].velocity[0] = 1;
   }
@@ -41,7 +40,6 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     enemies[1].Y = 235;
     if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
     if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
-    // enemy2 boundaries
     if(enemies[1].X + enemies[1].width === s[3][0]+ s[3][2]) enemies[1].velocity[0] = -1;
     if(enemies[1].X === s[3][0]) enemies[1].velocity[0] = 1;
   }
@@ -79,7 +77,7 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     score++;
     if(score % 6 === 0) {
       level++;
-      player.X = 10;
+      player.X = 50;
       player.Y = 660;
       player.velocity = [0, 0];
     }
