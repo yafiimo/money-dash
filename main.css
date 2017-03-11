@@ -10,6 +10,12 @@ p {
   margin-top: 30px;
 }
 
+h1 {
+  color: white;
+  text-shadow: 5px 5px red;
+  font-size: 80px;
+}
+
 #startButton {
   background-color: #0c0;
   font-size: 30px;
@@ -37,4 +43,6 @@ p {
 
 #startScreen {
   background-image: url('images/home.png');
+  height: 620px;
+  margin-top: -20px;
 }

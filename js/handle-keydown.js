@@ -1,4 +1,3 @@
-// Directional Control
 function handleKeyDown(event, player) {
   var player1 = player;
 

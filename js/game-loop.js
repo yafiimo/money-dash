@@ -22,10 +22,17 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
 
   // Platform Boundaries
   for(var j = 0; j < 5; j++) {
-    if(player.X + player.width > s[j][0] && player.X < s[j][0] + s[j][2] && player.Y <= s[j][1] + s[j][3] && player.Y >= s[j][1]) player.velocity[1] = 1;
-    if(player.X + player.width > s[j][0] && player.X < s[j][0] + s[j][2] && player.Y + player.height <= s[j][1] + s[j][3] && player.Y + player.height >= s[j][1]) player.velocity[1] = 0;
-    if(player.Y + player.height > s[j][1] && player.Y < s[j][1] + s[j][3] && player.X === s[j][0] + s[j][2]) player.velocity[0] = 1;
-    if(player.Y + player.height > s[j][1] && player.Y < s[j][1] + s[j][3] && player.X + player.width === s[j][0]) player.velocity[0] = -1;
+    if(player.X + player.width > s[j][0] && player.X < s[j][0] + s[j][2]
+      && player.Y <= s[j][1] + s[j][3] && player.Y >= s[j][1]) player.velocity[1] = 1;
+
+    if(player.X + player.width > s[j][0] && player.X < s[j][0] + s[j][2]
+      && player.Y + player.height <= s[j][1] + s[j][3] && player.Y + player.height >= s[j][1]) player.velocity[1] = 0;
+
+    if(player.Y + player.height > s[j][1] && player.Y < s[j][1] + s[j][3]
+      && player.X === s[j][0] + s[j][2]) player.velocity[0] = 1;
+
+    if(player.Y + player.height > s[j][1] && player.Y < s[j][1] + s[j][3]
+      && player.X + player.width === s[j][0]) player.velocity[0] = -1;
   }
 
 
@@ -73,7 +80,8 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
   context.drawImage(enemies[1].sprite, enemies[1].X, enemies[1].Y, enemies[1].width, enemies[1].height);
 
   // Respawn
-  if(player.X + player.width >= target.X && player.X <= target.X + target.width && player.Y <= target.Y + target.height && player.Y >= target.Y){
+  if(player.X + player.width >= target.X && player.X <= target.X + target.width
+    && player.Y <= target.Y + target.height && player.Y >= target.Y){
     score++;
     if(score % 6 === 0) {
       level++;
@@ -96,8 +104,8 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
       && player.Y + player.height > enemies[n].Y && player.Y < enemies[n].Y + enemies[n].height) {
       if(lives === 1){
 
-        level = 3;
-        score = 18;
+        // level = 3;
+        // score = 18;
         context.font = '100px Impact';
         context.fillStyle = '#FF0000';
         context.fillText('GAME OVER!', 380, 350);
