@@ -46,3 +46,13 @@ h1 {
   height: 620px;
   margin-top: -20px;
 }
+
+#gameOver h2 {
+  font-size: 100px;
+  font-family: Impact;
+  color: #FF0000;
+  position: absolute;
+  margin-left: 520px;
+  margin-top: 300px;
+  visibility: hidden;
+}

@@ -1,4 +1,4 @@
-// GAME LOOP --------------------------------------------------------------------------------------------------------
+// GAME LOOP
 var score = 0;
 var level = 0;
 var lives = 5;
@@ -6,7 +6,7 @@ var lives = 5;
 function gameLoop(canvas, context, landscapes, stages, player, enemies, target, targetXY) {
   var s = stages[level];
 
-// Motion ------------------------------------------------------------------------------------
+// Motion
   // Sprite Motion
   player.move();
   enemies[0].move();
@@ -35,23 +35,20 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
       && player.X + player.width === s[j][0]) player.velocity[0] = -1;
   }
 
-
   // Enemy1 Boundaries
-  if(level === 0 || level === 2){
-    if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
-    if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
-    if(enemies[1].X + enemies[1].width >= s[2][0]+ s[2][2]) enemies[1].velocity[0] = -1;
-    if(enemies[1].X <= s[2][0]) enemies[1].velocity[0] = 1;
-  }
+  if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
+  if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
+  if(enemies[1].X + enemies[1].width >= s[2][0]+ s[2][2]) enemies[1].velocity[0] = -1;
+  if(enemies[1].X <= s[2][0]) enemies[1].velocity[0] = 1;
+  // }
   if(level === 1){
     enemies[1].Y = 235;
-    if(enemies[0].X + enemies[0].width >= canvas.width) enemies[0].velocity[0] = -1;
-    if(enemies[0].X <= 0) enemies[0].velocity[0] = 1;
-    if(enemies[1].X + enemies[1].width === s[3][0]+ s[3][2]) enemies[1].velocity[0] = -1;
-    if(enemies[1].X === s[3][0]) enemies[1].velocity[0] = 1;
+  }
+  if(level === 2){
+    enemies[1].Y = 260;
   }
 
-// Rendering ------------------------------------------------------------------------------------------------
+// Rendering
 
   // Canvas
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -72,6 +69,19 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
   context.fillStyle = '#FF0000';
   context.fillText('Lives: ' + lives, 300, 50);
 
+  if(lives === 0) {
+    context.font = '100px Impact';
+    context.fillStyle = '#FF0000';
+    context.fillText('GAME OVER!', 380, 350);
+    player.X = -200;
+  }
+  if(score === 18) {
+    context.font = '100px Impact';
+    context.fillStyle = '#FF0000';
+    context.fillText('YOU WIN!', 380, 350);
+    player.X = -200;
+  }
+
   // Sprites
   context.drawImage(player.sprite, player.X, player.Y, player.width, player.height);
   context.drawImage(target.sprite, target.X, target.Y, target.width, target.height);
@@ -79,11 +89,11 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
   context.drawImage(enemies[0].sprite, enemies[0].X, enemies[0].Y, enemies[0].width, enemies[0].height);
   context.drawImage(enemies[1].sprite, enemies[1].X, enemies[1].Y, enemies[1].width, enemies[1].height);
 
-  // Respawn
+// Respawn
   if(player.X + player.width >= target.X && player.X <= target.X + target.width
     && player.Y <= target.Y + target.height && player.Y >= target.Y){
     score++;
-    if(score % 6 === 0) {
+    if(score % 6 === 0 && score !== 18) {
       level++;
       player.X = 50;
       player.Y = 660;
@@ -91,9 +101,6 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     }
     if(score === 18) {
       context.clearRect(0, 0, canvas.width, canvas.height);
-      context.font = '100px Impact';
-      context.fillStyle = '#FF0000';
-      context.fillText('YOU WIN!', 400, 350);
       setTimeout(function(){
         document.location.reload();
       }, 4000);
@@ -103,12 +110,6 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     if(player.X + player.width > enemies[n].X && player.X < enemies[n].X + enemies[n].width
       && player.Y + player.height > enemies[n].Y && player.Y < enemies[n].Y + enemies[n].height) {
       if(lives === 1){
-
-        // level = 3;
-        // score = 18;
-        context.font = '100px Impact';
-        context.fillStyle = '#FF0000';
-        context.fillText('GAME OVER!', 380, 350);
         setTimeout(function(){
           document.location.reload();
         }, 4000);
@@ -121,8 +122,8 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
     }
   }
 
-  // Loop Time
+// Loop Time
   setTimeout(function() {
     gameLoop(canvas, context, landscapes, stages, player, enemies, target, targetXY);
-  }, 7);
+  }, 8);
 }
