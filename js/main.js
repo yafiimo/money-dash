@@ -16,9 +16,9 @@ $(function() {
     var lives = 5;
     var canvas = document.getElementById('game-screen');
     var context = canvas.getContext('2d');
-    var landscapes = ['url("images/level1.png")', 'url("images/level2.jpg")', 'url("images/level3.png")'];
+    var landscapes = ['url("images/level1.png")', 'url("images/level2.png")', 'url("images/level3.png")'];
 
-    var stages = [[[0, 525, 510, 20], [690, 525, 510, 20], [200, 360, 800, 20], [0, 190, 510, 20], [690, 190, 510, 20]],
+    var platforms = [[[0, 525, 510, 20], [690, 525, 510, 20], [200, 360, 800, 20], [0, 190, 510, 20], [690, 190, 510, 20]],
                   [[60, 600, 1080, 20], [0, 450, 510, 20], [150, 290, 500, 20], [690, 450, 510, 20], [575, 100, 500, 20]],
                   [[0, 525, 510, 20], [690, 525, 510, 20], [200, 360, 800, 20], [0, 190, 510, 20], [690, 190, 510, 20]]];
 
@@ -36,7 +36,7 @@ $(function() {
     $(document).keydown(function(event) {
       handleKeyDown(event, player);
     });
-    gameLoop(canvas, context, landscapes, stages, player, enemies, target, targetXY, score, level, lives);
+    gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY, score, level, lives);
   });
 
 });

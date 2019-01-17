@@ -1,3 +1,7 @@
+body {
+  height: 100vh;
+}
+
 div {
   text-align: center;
 }
@@ -11,9 +15,13 @@ p {
 }
 
 h1 {
-  color: white;
-  text-shadow: 5px 5px red;
-  font-size: 80px;
+  font-size: 100px;
+  font-family: 'Bungee Inline', cursive;
+  -webkit-text-fill-color: red;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  position: relative;
+  top: 200px;
 }
 
 #startButton {
@@ -22,13 +30,17 @@ h1 {
   color: white;
   border-bottom: 5px #080 solid;
   border-right: 5px #080 solid;
-  border radius: 50px;
+  border-radius: 20px;
   margin-top: 300px;
 }
 
 #instructions {
   border-top: 15px red solid;
   border-bottom: 15px red solid;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 #instructionsButton {
@@ -37,14 +49,14 @@ h1 {
   color: white;
   border-bottom: 5px #800 solid;
   border-right: 5px #800 solid;
-  border radius: 50px;
+  border-radius: 20px;
   margin-top: 300px;
 }
 
 #startScreen {
   background-image: url('images/home.png');
-  height: 620px;
-  margin-top: -20px;
+  padding-top: 40px;
+  height: 100%;
 }
 
 #gameOver h2 {

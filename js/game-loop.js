@@ -3,8 +3,8 @@ var score = 0;
 var level = 0;
 var lives = 5;
 
-function gameLoop(canvas, context, landscapes, stages, player, enemies, target, targetXY) {
-  var s = stages[level];
+function gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY) {
+  var s = platforms[level];
 
 // Motion
   // Sprite Motion
@@ -83,6 +83,7 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
   }
 
   // Sprites
+
   context.drawImage(player.sprite, player.X, player.Y, player.width, player.height);
   context.drawImage(target.sprite, target.X, target.Y, target.width, target.height);
 
@@ -124,6 +125,6 @@ function gameLoop(canvas, context, landscapes, stages, player, enemies, target, 
 
 // Loop Time
   setTimeout(function() {
-    gameLoop(canvas, context, landscapes, stages, player, enemies, target, targetXY);
+    gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY);
   }, 8);
 }

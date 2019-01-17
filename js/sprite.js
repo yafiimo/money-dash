@@ -10,10 +10,6 @@ function Sprite(img, w, h, x, y, vx, vy, g, wt) {
   this.weight = wt;
 }
 
-Sprite.prototype.draw = function () {
-  this.context.drawImage(this.image, this.X, this.Y, this.width, this.height);
-};
-
 Sprite.prototype.move = function () {
   this.X += this.velocity[0];
   this.Y += this.velocity[1];
