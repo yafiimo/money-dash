@@ -62,11 +62,11 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
 
   // Display
   context.font = '30px Impact';
-  context.fillStyle = '#FF0000';
+  context.fillStyle = '#FFFFFF';
   context.fillText('Score: ' + score, 50, 50);
 
   context.font = '30px Impact';
-  context.fillStyle = '#FF0000';
+  context.fillStyle = '#FFFFFF';
   context.fillText('Lives: ' + lives, 300, 50);
 
   if(lives === 0) {
@@ -96,8 +96,11 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
     score++;
     if(score % 6 === 0 && score !== 18) {
       level++;
-      player.X = 50;
-      player.Y = 660;
+      player.velocity = [0, 0];
+    }
+    if(score === 6) {
+      player.X = 70;
+      player.Y = 540;
       player.velocity = [0, 0];
     }
     if(score === 18) {
@@ -122,6 +125,7 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
       lives--;
     }
   }
+  
 
 // Loop Time
   setTimeout(function() {
