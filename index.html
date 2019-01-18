@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SG Project 1</title>
+    <title>Money Dash</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/Sound.js" charset="utf-8"></script>
     <script src="js/sprite.js" charset="utf-8"></script>
     <script src="js/handle-keydown.js" charset="utf-8"></script>
     <script src="js/game-loop.js" charset="utf-8"></script>
@@ -20,11 +22,16 @@
     <div id="startScreen">
       <h1>Money Dash</h1>
       <button id="startButton" class="btn btn-lg">Start</button>
-      <button id="instructionsButton" class="btn btn-lg">Instructions</button>
+      <button id="instructionsButton" class="btn btn-lg">Information</button>
 
       <div id="instructions" class="jumbotron">
         <p>Use the right, left and up keys to control the player. Aim for the riches,
           but watch out for the ghouls!</p>
+        <div id="credits">
+          <p>Source Code: <a href="https://github.com/yafiimo/money-dash" target="blank">www.github.com/yafiimo/money-dash</a></p>
+          <p>Music and Sound Effects by Eric Matyas, <a href="https://soundimage.org" target="blank">www.soundimage.org</a></p>
+          <p>Sprites by Sithjester</p>
+        </div>
       </div>
     </div>
 

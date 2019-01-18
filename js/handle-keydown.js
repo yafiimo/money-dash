@@ -10,9 +10,9 @@ function handleKeyDown(event, player) {
           player.velocity[0] -= 1;
         }
         if (player.velocity[0] < 0) {
-          player.sprite.src = 'images/player-wl.png';
+          if(!player.sprite.src.includes('images/player-wl.png')) player.sprite.src = 'images/player-wl.png';
         } else {
-          player.sprite.src = 'images/player-l.png';
+          if(!player.sprite.src.includes('images/player-l.png')) player.sprite.src = 'images/player-l.png';
         }
       }
       break;
@@ -24,9 +24,9 @@ function handleKeyDown(event, player) {
           player.velocity[0] += 1;
         }
         if (player.velocity[0] > 0) {
-          player.sprite.src = 'images/player-wr.png';
+          if(!player.sprite.src.includes('images/player-wr.png')) player.sprite.src = 'images/player-wr.png';
         } else {
-          player.sprite.src = 'images/player-r.png';
+          if(!player.sprite.src.includes('images/player-r.png')) player.sprite.src = 'images/player-r.png';
         }
       }
       break;

@@ -1,9 +1,9 @@
 // GAME LOOP
-var score = 0;
-var level = 0;
-var lives = 5;
+// var score = 0;
+// var level = 0;
+// var lives = 5;
 
-function gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY) {
+function gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY, score, level, lives, sounds) {
   var s = platforms[level];
 
 // Motion
@@ -94,6 +94,7 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
   if(player.X + player.width >= target.X && player.X <= target.X + target.width
     && player.Y <= target.Y + target.height && player.Y >= target.Y){
     score++;
+    sounds.target.play();
     if(score % 6 === 0 && score !== 18) {
       level++;
       player.velocity = [0, 0];
@@ -113,6 +114,8 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
   for(var n = 0;  n < 2; n++){
     if(player.X + player.width > enemies[n].X && player.X < enemies[n].X + enemies[n].width
       && player.Y + player.height > enemies[n].Y && player.Y < enemies[n].Y + enemies[n].height) {
+      
+      sounds.enemy.play();
       if(lives === 1){
         setTimeout(function(){
           document.location.reload();
@@ -129,6 +132,6 @@ function gameLoop(canvas, context, landscapes, platforms, player, enemies, targe
 
 // Loop Time
   setTimeout(function() {
-    gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY);
+    gameLoop(canvas, context, landscapes, platforms, player, enemies, target, targetXY, score, level, lives, sounds);
   }, 8);
 }

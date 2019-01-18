@@ -24,6 +24,11 @@ h1 {
   top: 200px;
 }
 
+#credits p {
+  font-size: 12px !important;
+  margin: 0px;
+}
+
 #startButton {
   background-color: #0c0;
   font-size: 30px;
