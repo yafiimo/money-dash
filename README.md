@@ -1,6 +1,8 @@
 # sg-project-1
 Sparta Global Project 1
 
+www.money-dash.herokuapp.com
+
 ## Money-Dash Platform Game
 
 A single player platformer where the player aims to collect items on three different maps whilst also avoiding enemy sprites. The directional up, right and left are used to navigate the player around the map.
