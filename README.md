@@ -1,7 +1,7 @@
 # sg-project-1
 Sparta Global Project 1
 
-www.money-dash.herokuapp.com
+https://money-dash.herokuapp.com
 
 ## Money-Dash Platform Game
 
